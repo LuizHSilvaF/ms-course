@@ -29,12 +29,12 @@ public class WorkerController {
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Worker> findById(@PathVariable Long id){
 		
-		/*try {
+		try {
 			Thread.sleep(3000L);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}*/
+		}
+		
 		Worker worker = repo.findById(id).get();
 		return ResponseEntity.ok(worker);
 	}
